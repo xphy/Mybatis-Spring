@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.orilore.mappers.StudentMapper">
+	
+	<select id="selectOne" parameterType="int" resultType="Student">
+		select * from student where id=#{id}
+	</select>
+	<select id="select" resultType="Student">
+		select * from student
+	</select>
+	<insert id="insert" parameterType="Student">
+		insert into student(Sno,Sname,Sage,Ssex,Sdept) values(#{Sno},#{Sname},#{Sage},#{Ssex},#{Sdept})
+	</insert>
+	<delete id="delete" parameterType="int">
+		delete from student where id=#{id}
+	</delete>
+	<update id="update" parameterType="Student">
+		update student set Sno=#{Sno},Sname=#{Sname},Sage=#{Sage},Ssex=#{Ssex},Sdept=#{Sdept} where id=#{id}
+	</update>
+</mapper>
